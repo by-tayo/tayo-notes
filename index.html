@@ -274,14 +274,14 @@ body.intro-on .sheet-wrap { transform: translateY(1rem); opacity: 0; }
 
 .toc {
   margin: 1.75rem 0 0; padding: 0; list-style: none;
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr)); gap: .25rem 1.5rem;
+  display: flex; flex-direction: column; gap: .25rem; max-width: 36rem;
 }
 .toc a {
   display: flex; gap: .6rem; align-items: baseline; text-decoration: none; color: var(--ink);
   padding: .35rem .1rem; border-bottom: 1px dashed var(--rule); font-size: .95rem;
 }
 .toc a:hover, .toc a:focus-visible { color: var(--seal); border-bottom-color: var(--seal); outline: none; }
-.toc .n { font-family: var(--f-mono); font-size: .8rem; color: var(--seal); font-variant-numeric: tabular-nums; }
+.toc .n { flex: 0 0 auto; white-space: nowrap; font-family: var(--f-mono); font-size: .8rem; color: var(--seal); font-variant-numeric: tabular-nums; }
 
 .part { display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: 1.5rem; padding-top: 3rem; scroll-margin-top: 1rem; }
 .margin { display: flex; flex-direction: column; align-items: center; gap: .9rem; }
