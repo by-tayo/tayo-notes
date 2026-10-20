@@ -202,6 +202,9 @@ body.intro-on .sheet-wrap { transform: translateY(1rem); opacity: 0; }
 .today .v { font-style: italic; }
 .wind { width: 3.4rem; height: 1.6rem; overflow: visible; }
 .wind path { fill: none; stroke: var(--ink-soft); stroke-width: 1.6; stroke-linecap: round; }
+.cool { width: 1rem; height: 1.6rem; overflow: visible; }
+.cool path, .cool circle { fill: none; stroke: var(--ink-soft); stroke-width: 1.6; stroke-linecap: round; }
+.cool .fill { fill: var(--ink-soft); stroke: none; }
 @media (prefers-reduced-motion: no-preference) {
   .wind path { animation: gust 3.2s ease-in-out infinite; }
   .wind path:nth-child(2) { animation-delay: .4s; }
@@ -488,6 +491,16 @@ body { margin: 0; }
         <p class="dek">On rest, trust, and building a future without losing myself.</p>
         <div class="today">
           <div class="item"><span class="k">Mood</span><span class="v">Bittersweet</span></div>
+          <div class="item">
+            <span class="k">Weather</span>
+            <svg class="cool" viewBox="0 0 14 32" role="img" aria-label="Drawing of a thermometer reading cool">
+              <path d="M4 22 V5 a3 3 0 0 1 6 0 V22"/>
+              <circle cx="7" cy="26" r="4.5"/>
+              <circle class="fill" cx="7" cy="26" r="2.4"/>
+              <path d="M7 24 V17"/>
+            </svg>
+            <span class="v">Cool</span>
+          </div>
         </div>
 
         <ol class="toc" aria-label="In this entry">
