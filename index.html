@@ -655,7 +655,7 @@ body { margin: 0; }
   if (m) { var found = pages.findIndex(function (p) { return p.dataset.no === m[1]; }); if (found > -1) idx = found; }
 
   function render() {
-    pages.forEach(function (p, i) { p.hidden = i !== idx; });
+    pages.forEach(function (p, i) { p.hidden = i !== idx; if (i !== idx) p.classList.remove('from-back'); });
     var p = pages[idx];
     prev.disabled = idx === 0;
     next.disabled = idx === pages.length - 1;
@@ -671,6 +671,7 @@ body { margin: 0; }
       var clone = old.cloneNode(true);
       clone.removeAttribute('id');
       clone.querySelectorAll('[id]').forEach(function (el) { el.removeAttribute('id'); });
+      clone.classList.remove('from-back');
       clone.classList.add('turning', 'fwd');
       clone.style.height = old.offsetHeight + 'px';
       clone.style.overflow = 'hidden';
@@ -680,8 +681,10 @@ body { margin: 0; }
     } else {
       idx = to; render();
       if (!reduce) {
+        busy = true;
         var np = pages[idx];
         np.classList.remove('from-back'); void np.offsetWidth; np.classList.add('from-back');
+        np.addEventListener('animationend', function () { np.classList.remove('from-back'); busy = false; }, { once: true });
       }
     }
     try { history.replaceState(null, '', '#entry-' + pages[idx].dataset.no); } catch (e) {}
