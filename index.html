@@ -205,6 +205,8 @@ body.intro-on .sheet-wrap { transform: translateY(1rem); opacity: 0; }
 .cool { width: 1rem; height: 1.6rem; overflow: visible; }
 .cool path, .cool circle { fill: none; stroke: var(--ink-soft); stroke-width: 1.6; stroke-linecap: round; }
 .cool .fill { fill: var(--ink-soft); stroke: none; }
+.sun { width: 1.6rem; height: 1.6rem; overflow: visible; }
+.sun path, .sun circle { fill: none; stroke: var(--ink-soft); stroke-width: 1.6; stroke-linecap: round; }
 @media (prefers-reduced-motion: no-preference) {
   .wind path { animation: gust 3.2s ease-in-out infinite; }
   .wind path:nth-child(2) { animation-delay: .4s; }
@@ -600,9 +602,17 @@ body { margin: 0; }
         </p>
         <h2>Learning Through the Unknown</h2>
         <div class="title-jp" lang="ja">未知から学ぶ</div>
-        <p class="dek">On curiosity, permissions, and not knowing every answer yet.</p>
+        <p class="dek">On my work, learning new things, and facing challenges.</p>
         <div class="today">
-          <div class="item"><span class="k">Mood</span><span class="v">Drained but curious</span></div>
+          <div class="item"><span class="k">Mood</span><span class="v">Drained</span></div>
+          <div class="item">
+            <span class="k">Weather</span>
+            <svg class="sun" viewBox="0 0 32 32" role="img" aria-label="Drawing of a clear-sky sun">
+              <circle cx="16" cy="16" r="5.5"/>
+              <path d="M16 3 V7 M16 25 V29 M3 16 H7 M25 16 H29 M6.8 6.8 L9.6 9.6 M22.4 22.4 L25.2 25.2 M6.8 25.2 L9.6 22.4 M22.4 9.6 L25.2 6.8"/>
+            </svg>
+            <span class="v">Clear skies, hot, then cold tonight</span>
+          </div>
         </div>
 
         <ol class="toc" aria-label="In this entry">
@@ -629,9 +639,8 @@ body { margin: 0; }
         <div class="margin"><span class="num sz">02</span></div>
         <div class="body">
           <h3>What did I work on today?</h3>
-          <p>I spent time learning about Tenable Nessus and vulnerability management. I learned how it helps organizations view and organize assets across their environments using information such as IP addresses, tags, and asset filters.</p>
-          <p>My assigned task involved identifying assets older than one year and deleting them. There were more than 7,000 assets to review, and the bulk operation had a limit of approximately 200 items per request.</p>
-          <p>I began exploring the developer documentation to understand how the API could help with this process. It was an opportunity to learn how security tools work behind the scenes, beyond their interfaces.</p>
+          <p>I spent time learning about Tenable and vulnerability management. I learned how it helps organizations view and organize assets across their environments using information such as IP addresses, tags, and asset filters.</p>
+          <p>I was challenged to use the API developer reference to see whether I could bulk delete assets that way. It was an opportunity to learn how security tools work behind the scenes, beyond their interfaces.</p>
         </div>
       </section>
 
@@ -639,10 +648,11 @@ body { margin: 0; }
         <div class="margin"><span class="num sz">03</span></div>
         <div class="body">
           <h3>What challenged me?</h3>
-          <p>One of my biggest challenges was understanding how the API credentials needed to be formatted, including the access key and secret key. I was also unsure whether my account had the elevated permissions required to run the necessary operations through PowerShell or the API testing tools.</p>
+          <p>One of my biggest challenges was understanding how the API credentials needed to be formatted, including the access key and secret key. Because I’m a current intern, I also had concerns about elevated privileges. I wasn’t sure whether my account would have the access needed to run scripts through PowerShell or the API testing tools.</p>
           <p>I worked through the PowerShell scripts in the documentation so I could learn what each section did.</p>
           <p>I wanted to solve the problem independently, but I also recognized that I was working in a corporate environment where permissions and changes must be handled carefully. I didn’t want to risk affecting assets or making changes without the proper authorization.</p>
           <p>I also wanted to make a good impression through my security engineering work. Sometimes, that expectation made the challenge feel more difficult than it needed to be.</p>
+          <p>Another challenge right now is SAS. I’ve been learning the SAS programming language, which is used in data science, and it’s still pretty new to me. I’m currently competing in a SAS hackathon that runs from October 1 to October 31, and succeeding in it is my top priority.</p>
         </div>
       </section>
 
